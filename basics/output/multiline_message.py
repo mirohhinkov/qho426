@@ -8,3 +8,5 @@ System reboot has been initiated...
 ...rebooting hover engine
 System online.
 """)
+
+print('I am Beep!')
