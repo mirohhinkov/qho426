@@ -10,3 +10,8 @@ System online.
 """)
 
 print('I am Beep!')
+
+print("##########")
+print("#        #")
+print("#        #")
+print("##########")
