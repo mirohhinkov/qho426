@@ -9,9 +9,3 @@ System reboot has been initiated...
 System online.
 """)
 
-print('I am Beep!')
-
-print("##########")
-print("#        #")
-print("#        #")
-print("##########")
