@@ -1,0 +1,8 @@
+name = input('What is your name\n')
+print('Hello,', name)
+age = int(input('What is your age\n'))
+height = float(input('What is your height\n'))
+weight = int(input('What is your weight\n'))
+bmi = weight/(height**2)
+# print(f"{name} you are {age} years old and your bmi is {bmi}")
+print("{} you are {} years old and your bmi is {:.4f}".format(name, age, bmi))
