@@ -12,6 +12,22 @@ class Human:
     print(f"I am {self.name}")
     return self
 
+  def grow(self):
+    self.age += 1
+    return self
+
+  def eat(self, amount):
+    self.energy += amount
+    self.energy = 100 if self.energy > Human.MAX_ENERGY else self.energy
+    return self
+
+  def move(self, distance):
+    self.energy -= distance
+    self.energy = 0 if self.energy < 0 else self.energy
+    return self
+
+  
+
   # dunders
   def __repr__(self):
     return f"human(name={self.name}, age={self.age})"
