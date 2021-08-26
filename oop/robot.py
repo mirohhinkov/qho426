@@ -9,10 +9,17 @@ class Robot:
     self.age = 0
     self.energy = 0
 
-  #instance methods
+  # instance methods
   def display(self):
     print(f"I am {self.name}")
     return self
+
+  # dunders
+  def __repr__(self):
+    return f"robot(name={self.name}, age={self.age})"
+
+  def __str__(self):
+    return f"Robot {self.name} is {self.age} years old."
 
 
 #tests
