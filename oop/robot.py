@@ -40,3 +40,5 @@ class Robot:
 if __name__ == "__main__":
   robot = Robot()
   robot.display() 
+  robot.name = 'Robi'
+  print(repr(robot))

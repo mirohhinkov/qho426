@@ -38,4 +38,6 @@ class Human:
 if __name__ == "__main__":
   human = Human()
   human.display()
+  human.name = "Miro"
+  print(human)
 
