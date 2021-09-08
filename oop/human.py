@@ -7,6 +7,21 @@ class Human:
     self.age = 0
     self.energy = Human.MAX_ENERGY
 
+
+  @property
+  def energy(self):
+      return self.__energy
+
+  @energy.setter
+  def energy(self, x):
+      if x < 0:
+          self.__energy = 0
+      elif x > Human.MAX_ENERGY:
+          self.__energy = Human.MAX_ENERGY
+      else:
+          self.__energy = x
+
+
   #instance methods
   def display(self):
     print(f"I am {self.name}")
@@ -18,26 +33,25 @@ class Human:
 
   def eat(self, amount):
     self.energy += amount
-    self.energy = 100 if self.energy > Human.MAX_ENERGY else self.energy
     return self
 
   def move(self, distance):
     self.energy -= distance
-    self.energy = 0 if self.energy < 0 else self.energy
     return self
 
   
-
   # dunders
   def __repr__(self):
     return f"human(name={self.name}, age={self.age})"
 
   def __str__(self):
-    return f"Human {self.name} is {self.age} years old."
+    return f"Human {self.name} is {self.age} years old.\nEnergy: {self.energy}"
 
 if __name__ == "__main__":
   human = Human()
   human.display()
   human.name = "Miro"
+  human.age = 20
+  human.move(10).eat(5).grow().eat(50)
   print(human)
 

@@ -8,6 +8,20 @@ class Robot:
     self.name = "Robot"
     self.age = 0
     self.energy = 0
+  
+
+  @property
+  def energy(self):
+      return self.__energy
+
+  @energy.setter
+  def energy(self, x):
+      if x < 0:
+          self.__energy = 0
+      elif x > Robot.MAX_ENERGY:
+          self.__energy = Robot.MAX_ENERGY
+      else:
+          self.__energy = x
 
   # instance methods
   def display(self):
@@ -20,20 +34,18 @@ class Robot:
 
   def eat(self, amount):
     self.energy += amount
-    self.energy = 100 if self.energy > Robot.MAX_ENERGY else self.energy
     return self
 
   def move(self, distance):
     self.energy -= distance
-    self.energy = 0 if self.energy < 0 else self.energy
     return self
 
   # dunders
   def __repr__(self):
-    return f"robot(name={self.name}, age={self.age})"
+    return f"robot(name={self.name}, age={self.age}, energy={self.energy})"
 
   def __str__(self):
-    return f"Robot {self.name} is {self.age} years old."
+    return f"Robot {self.name} is {self.age} years old.\nEnergy: {self.energy}"
 
 
 #tests
@@ -41,4 +53,6 @@ if __name__ == "__main__":
   robot = Robot()
   robot.display() 
   robot.name = 'Robi'
-  print(repr(robot))
+  print(robot)
+  robot.eat(90).move(20).eat(50)
+  print(robot)
