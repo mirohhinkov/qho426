@@ -54,5 +54,7 @@ if __name__ == "__main__":
   robot.display() 
   robot.name = 'Robi'
   print(robot)
-  robot.eat(90).move(20).eat(50)
+  robot.eat(90)
+  print(robot)
+  robot.move(20).eat(50)
   print(robot)

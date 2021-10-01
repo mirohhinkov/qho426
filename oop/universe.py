@@ -17,6 +17,7 @@ class Universe:
     for i in range(randint(0, 11)):
       planet.add_robot(Robot())
     self.planets.append(planet)
+    return self
 
   def show_populations(self):
     x = []
@@ -46,10 +47,4 @@ class Universe:
 
 if __name__ == '__main__':
   uni = Universe()
-  uni.generate()
-  uni.generate()
-  uni.generate()
-  uni.generate()
-  uni.generate()
-  uni.generate()
-  uni.show_populations()
+  uni.generate().generate().generate().generate().generate().generate().show_populations()
